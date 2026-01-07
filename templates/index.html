@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PizzaOrNotPizza</title>
+    <link rel="stylesheet" href="../static/stylesheet.css">
+</head>
+<body>
+    <header>   
+        <div>
+            <img class="header_img" src="https://aidemyexstorage.blob.core.windows.net/aidemycontents/1621500180546399.png" alt="Aidemy">
+            <img class="header_icon" src="{{ url_for('static', filename='img/pizza.jpg') }}" alt="Pizza" height="60px">
+        </div>
+        <a class="header-logo" href="#">PizzaOrNotPizza</a>
+    </header>
+
+    <div class="main">    
+        <h2>送信された画像がピザであるかどうかをAIが識別します</h2>
+        <p>画像を送信してください</p>
+        <form method="POST" enctype="multipart/form-data">
+            <input class="file_choose" type="file" name="file">
+            <input class="btn" value="submit!" type="submit">
+        </form>
+        <div class="answer">
+            <p>{{answer}}<br>{{confidence}}</p>
+        </div>
+    </div>
+
+    <footer>
+        <img class="footer_img" src="https://aidemyexstorage.blob.core.windows.net/aidemycontents/1621500180546399.png" alt="Aidemy">
+        <small>&copy; 2019 Aidemy, inc.</small>   
+    </footer>
+</body>
+</html>
